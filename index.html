@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Как протестировать файл php в проекте docker_wordpress?</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style type="text/css">
+		p{
+			margin: 15px 0;
+		}
+		h1{
+			margin: 55px 0 10px;
+		}
+		h2{
+			margin: 35px 0 10px;
+		}
+		img{
+			width: 100%;
+		}
+		.btn{
+			margin-bottom: 15px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h1>Как протестировать файл php в проекте docker_wordpress?</h1>
+
+			<h2>Шаг 1</h2>
+			<p>Открываем директорию с проектом и запускаем докер:</p>
+			<p><kbd>make start<kbd></p>
+			<img class="img-responsive" src="./images/step-01.jpeg">
+			<p>... должны увидеть приблизительно такое:</p>
+			<img class="img-responsive" src="./images/step-01-01.jpeg">
+			<p>Проверяем в браузере. Набираем в адрессной строке:</p>
+			<p><kbd>localhost/<kbd></p>
+			<a class="btn btn-primary" href="http://localhost/" target="_blank">Или жмем на эту ссылку</a>
+			<img class="img-responsive" src="./images/step-01-02.jpeg">
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h2>Шаг 2</h2>
+			<p>Создаем кастомную тему для Wordpress.</p>
+			<p>
+				Для этого в директории <kbd>/docker_wordpress/public/wp-content/themes/</kbd>
+				создаем новую директорию с названием темы, например <kbd>tempTheme</kbd>
+			</p>
+			<img class="img-responsive" src="./images/step-02-01.jpeg">
+			<p>
+				Создаем два файла <kbd>style.css</kbd> - заполняем как на картинке и <kbd>index.php</kbd> - пока что оставляем пустым.
+			</p>
+			<img class="img-responsive" src="./images/step-02-02.jpeg">
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h2>Шаг 3</h2>
+			<p>Теперь нужно активировать созданную нами тему. Переходим в браузере по ссылке <kbd>http://localhost/wp-login.php</kbd></p>
+			<a class="btn btn-primary" href="http://localhost/wp-login.php" target="_blank">Или жмем на эту ссылку</a>
+			<img class="img-responsive" src="./images/step-02-03.jpeg">
+			<p>Дальше переходим во вкладку <kbd>Внешний вид(Appearance) >> Темы(Themes)</kbd>, выбираем созданную тему(в нашем случае - <kbd>Temp WordPress Theme</kbd>) и жмем <kbd>Активировать</kbd>!</p>
+			<img class="img-responsive" src="./images/step-02-04.jpeg">
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h2>Шаг 4</h2>
+			<p>Создаем тестовый контент в <kbd>index.php</kbd>.</p>
+			<img class="img-responsive" src="./images/step-02-05.jpeg">
+			<p>Сохраняем и открываем в браузере <kbd>localhost/<kbd></p>
+			<img class="img-responsive" src="./images/step-02-06.jpeg">
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
